@@ -16,13 +16,29 @@ while True:
 
     if players.isdigit():
         players=int(players)
-    if players not in [2,3,4]:
-        print(" Please Enter a number from 2 to 4")
+        if players in [2,3,4]:
+              break
+        else:
+            print("Must be between 2 - 4 players")
+            
     else:
-        break
+        print("Invalid, Try Again")
 
-print(players)
+
+
+max_score=50
+player_scores=[0 for _ in range(players)]
     
-    
-    
-#continue at 1:45:09
+while max(player_scores) < max_score:
+        currentscore=0
+        should_roll=input("Would you like to roll (y)?")
+        if should_roll.lower() != "y":
+            break
+            
+        value=roll() 
+        if value == 1:
+             print("You rolled a 1! Turn done")
+        else:
+             print("You rolled a:",value)
+                     
+#continue at 1:50:20
